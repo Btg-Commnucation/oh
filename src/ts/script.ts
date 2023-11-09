@@ -1,3 +1,5 @@
+import { submitForm, TCustomFormEvent } from "./submitForm.ts";
+
 const menuToggle = document.getElementById("menuToggler");
 
 if (menuToggle) {
@@ -18,4 +20,11 @@ if (menuToggle) {
       menuContainer!.classList.remove("close");
     }, 2000);
   });
+}
+
+const form = document.querySelector("form");
+
+if (form) {
+  // @ts-ignore
+  form.addEventListener("submit", (e: TCustomFormEvent) => submitForm(e));
 }

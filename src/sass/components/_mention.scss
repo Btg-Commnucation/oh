@@ -1,0 +1,29 @@
+#mention {
+  margin-top: 5.7rem;
+
+  color: var(--color-blue);
+  font-size: 2.3rem;
+
+  @media (max-width: 1399px) {
+    font-size: calc(16px + (23 - 16) * ((100vw - 320px) / (1399 - 320)));
+  }
+
+  .logo {
+    width: 150.67px;
+    height: 92.3px;
+    margin-bottom: 8.74rem;
+  }
+
+  h1 {
+    text-align: center;
+    max-width: 702px;
+    line-height: 1;
+    margin-inline: auto;
+    color: var(--color-blue);
+    margin-bottom: 15.3rem;
+  }
+
+  h4:not(:first-of-type) {
+    margin-top: 0.6em;
+  }
+}
