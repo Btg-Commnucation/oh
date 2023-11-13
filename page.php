@@ -69,13 +69,15 @@
         </ul>
       </div>
     <?php endif; ?>
-    <div class="subTitle">
-      <strong class="step">03 <span></span></strong>
-      <h3><?php the_field('sous_titre_troisieme_point'); ?></h3>
-    </div>
-    <div class="third-point-content">
-      <div><?php the_field('premier_texte_troisieme_point'); ?></div>
-      <div><?php the_field('premier_texte_troisieme_point'); ?></div>
+    <div class="container">
+      <div class="subTitle">
+        <strong class="step">03 <span></span></strong>
+        <h3><?php the_field('sous_titre_troisieme_point'); ?></h3>
+      </div>
+      <div class="third-point-content">
+        <div><?php the_field('premier_texte_troisieme_point'); ?></div>
+        <div><?php the_field('premier_texte_troisieme_point'); ?></div>
+      </div>
     </div>
   </section>
 </main>

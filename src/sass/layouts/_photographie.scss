@@ -1,0 +1,161 @@
+#photographie {
+  .splide {
+    height: 100vh;
+  }
+
+  .section {
+    height: 100vh;
+  }
+
+  h2 {
+    font-size: var(--title-h1);
+    line-height: 1;
+    color: var(--color-blue);
+
+    @media (max-width: 1399px) {
+      font-size: var(--responsive-title-h1);
+    }
+  }
+
+  .content-hero-banner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: calc(100% - 26px);
+
+    img:not(.logo-page) {
+      height: 100%;
+    }
+  }
+
+  .logo-page {
+    width: 269px;
+    height: 164px;
+    position: absolute;
+    left: -28rem;
+    top: -10.5rem;
+  }
+
+  .title-container {
+    position: relative;
+    left: -30rem;
+    color: var(--color-blue);
+
+    div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      border-top: 1px solid var(--color-blue);
+      border-bottom: 1px solid var(--color-blue);
+      padding-block: 2.5rem;
+      line-height: 1;
+      margin-block: 2.5rem;
+    }
+  }
+
+  .point {
+    width: var(--dot-size);
+    height: var(--dot-size);
+    background: var(--color-blue);
+    border-radius: 50%;
+    display: flex;
+  }
+
+  .gallerie_un {
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      gap: 4.3rem;
+      color: var(--color-blue);
+    }
+
+    .right img {
+      margin-left: 5.6rem;
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  .splide__pagination {
+    counter-reset: pagination-num;
+  }
+
+  .splide__pagination__page:before {
+    counter-increment: pagination-num;
+    content: "0" counter(pagination-num);
+    color: var(--color-blue);
+    font-weight: 700;
+  }
+
+  .splide__pagination--ttb {
+    right: unset;
+    left: 0.5em;
+    gap: 1.4rem;
+
+    button {
+      background: var(--color-blue);
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      opacity: 1;
+
+      &::before {
+        opacity: 0;
+        height: 0;
+        width: 0;
+        font-size: 1px;
+      }
+
+      &.is-active {
+        background: transparent;
+        width: auto;
+        height: auto;
+
+        &::before {
+          opacity: 1;
+          font-size: 7.4rem;
+        }
+      }
+    }
+  }
+}
+
+.gallerie_deux {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  h2 {
+    position: relative;
+    top: -20rem;
+    right: -10rem;
+    text-align: center;
+  }
+
+  .background {
+    position: absolute;
+    background: white;
+    width: var(--image-responsive-width);
+    height: calc(268px + (536 - 268) * ((100vw - 320px) / (1920 - 320)));
+    bottom: 4rem;
+
+    img {
+      position: relative;
+      left: -30px;
+      top: -20px;
+      width: var(--image-responsive-width);
+      height: calc(268px + (536 - 268) * ((100vw - 320px) / (1920 - 320)));
+      object-fit: cover;
+    }
+  }
+}
+
+.splide__arrows {
+  display: none;
+}

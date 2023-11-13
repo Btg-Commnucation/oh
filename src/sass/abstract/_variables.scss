@@ -1,20 +1,37 @@
 :root {
   --color-blue: #183680;
   --title-h1: 12.2rem;
-  --responsive-title-h1: calc(42px + (122 - 42) * ((100vw - 320px) / (1399 - 320)));
+  --responsive-title-h1: calc(
+    42px + (122 - 42) * ((100vw - 320px) / (1399 - 320))
+  );
+  --title-h3: 4.4rem;
+  --responsive-title-h3: calc(
+    28px + (44 - 28) * ((100vw - 320px) / (1399 - 320))
+  );
   --title-h4: 3.2rem;
-  --responsive-title-h4: calc(22px + (32 - 22) * ((100vw - 320px) / (1399 - 320)));
+  --responsive-title-h4: calc(
+    22px + (32 - 22) * ((100vw - 320px) / (1399 - 320))
+  );
   --title-h2: 7.2rem;
   --title-menu: 6.4rem;
-  --responsive-title-menu: calc(34px + (64 - 34) * ((100vw - 320px) / (1399 - 320)));
+  --responsive-title-menu: calc(
+    34px + (64 - 34) * ((100vw - 320px) / (1399 - 320))
+  );
+
+  --dot-size: calc(17px + (27 - 17) * ((100vw - 320px) / (1920 - 320)));
   --footer-text: calc(18px + (28 - 18) * ((100vw - 320px) / (1920 - 320)));
   --small-text: calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320)));
+  --responsive-text: calc(17px + (23 - 17) * ((100vw - 320px) / (1920 - 320)));
   --font-gotham: "GothamBook", sans-serif;
   --font-gothamRnd: "GothamRnd", sans-serif;
-  
+
   --image-width: 481.51px;
   --image-height: 294.96px;
-  
-  --image-responsive-width: calc(240.75px + (481.51 - 240.75) * ((100vw - 320px) / (1920 - 320)));
-  --image-responsive-height: calc(147.48px + (294.96 - 147.48) * ((100vw - 320px) / (1920 - 320)));
+
+  --image-responsive-width: calc(
+    240px + (481 - 240) * ((100vw - 320px) / (1920 - 320))
+  );
+  --image-responsive-height: calc(
+    147px + (294 - 147) * ((100vw - 320px) / (1920 - 320))
+  );
 }
