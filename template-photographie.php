@@ -42,7 +42,7 @@ Template Name: Photographie
                             <img src="<?= esc_url($img_un_gal_deux['url']); ?>" alt="<?= esc_attr($img_un_gal_deux['alt']); ?>">
                         </div>
                         <?php $img_deux_gal_deux = get_field('image_2_gallerie_2'); ?>
-                        <img src="<?= esc_url($img_deux_gal_deux['url']); ?>" alt="<?= esc_attr($img_deux_gal_deux['alt']); ?>">
+                        <img src="<?= esc_url($img_deux_gal_deux['url']); ?>" alt="<?= esc_attr($img_deux_gal_deux['alt']); ?>" class="img-gallerie_deux">
                     </li>
                     <li class="section gallerie_trois splide__slide">
                         <?php $img_gal_3 = get_field('image_1_gallerie_3');
