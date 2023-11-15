@@ -250,6 +250,7 @@
     width: var(--image-responsive-width);
     height: calc(268px + (536 - 268) * ((100vw - 320px) / (1920 - 320)));
     bottom: 4rem;
+    left: 45rem;
 
     @media (max-width: 1335px) {
       left: 30rem;
@@ -342,11 +343,45 @@
   align-items: start;
   padding-top: 14.4rem;
 
+  @media (max-width: 1796px) {
+    display: grid;
+    grid-template-columns: 0.9fr 0.5fr 0.5fr;
+    justify-items: end;
+  }
+
+  @media (max-width: 1000px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 50vh);
+    padding-top: 0;
+
+    img:first-of-type {
+      grid-column: 1 / 3;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    img:not(:first-of-type) {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
   h2 {
     position: absolute;
     max-width: 564px;
     left: 50%;
     top: 0;
+
+    @media (max-width: 1000px) {
+      left: 0;
+      right: 0;
+      margin-inline: auto;
+      text-align: center;
+      top: 5rem;
+    }
   }
 
   img:nth-of-type(2) {
