@@ -12,7 +12,7 @@ if (!defined('ABSPATH')) {
 // it is recommended to move it into wp-config.php
 define(
 	'IS_VITE_DEVELOPMENT',
-	true
+	false
 );
 
 

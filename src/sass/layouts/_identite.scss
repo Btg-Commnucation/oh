@@ -8,6 +8,14 @@
       grid-column: 2;
     }
 
+    @media (max-width: 1250px) {
+      grid-template-columns: 1fr;
+
+      .container-page {
+        grid-column: 1;
+      }
+    }
+
     figure {
       width: fit-content;
       border-bottom: 17px solid var(--color-blue);
@@ -39,9 +47,20 @@
   .buttons-container {
     margin-block: 7.9rem 11.7rem;
 
+    .container-page {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2.4rem;
+
+      @media (max-width: 1250px) {
+        justify-content: center;
+      }
+    }
+
     button {
       color: var(--color-blue);
-      font-size: 2.8rem;
+      font-size: calc(20px + (28 - 20) * ((100vw - 320px) / (1920 - 320)));
       font-weight: 500;
       background: transparent;
       padding: 2rem 3.8rem;
@@ -57,7 +76,7 @@
   }
 
   h2.normal-style {
-    font-size: 7.4rem;
+    font-size: calc(40px + (74 - 40) * ((100vw - 320px) / (1920 - 320)));
     font-weight: 500;
     color: var(--color-blue);
     margin-bottom: 2.6rem;
@@ -72,6 +91,11 @@
     max-width: 70%;
     margin-inline: auto;
     margin-bottom: 8.8rem;
+
+    @media screen and (max-width: 1350px) {
+      flex-direction: column;
+      max-width: 95%;
+    }
   }
 
   .cinquante-cinquante {
@@ -80,12 +104,32 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 
+    @media (max-width: 1350px) {
+      max-width: 100%;
+    }
+
+    @media (max-width: 650px) {
+      grid-template-columns: 1fr;
+
+      img {
+        width: 100%;
+      }
+    }
+
     .wp-block-column:first-of-type {
       margin-bottom: 6.1rem;
+
+      @media (max-width: 650px) {
+        margin: 0;
+      }
     }
 
     .wp-block-column :last-of-type {
       margin-top: 6.1rem;
+
+      @media (max-width: 650px) {
+        margin: 0;
+      }
     }
   }
 
@@ -93,10 +137,28 @@
     max-width: 87%;
     margin-inline: auto;
 
+    @media (max-width: 1350px) {
+      max-width: 90%;
+    }
+
+    @media (max-width: 1000px) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 100%;
+      }
+    }
+
     h4 {
       position: relative;
       top: -8rem;
       left: -10rem;
+
+      @media (max-width: 1000px) {
+        left: unset;
+      }
     }
 
     h3 {
@@ -116,9 +178,24 @@
     position: relative;
     margin-top: -8.5rem;
     margin-bottom: 11.5rem;
+
+    @media (max-width: 1350px) {
+      max-width: 90%;
+    }
+
+    @media (max-width: 850px) {
+      flex-direction: column;
+    }
   }
 
   .texte_trente_soixante-dix {
+    @media (max-width: 1000px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
     .wp-block-column {
       display: flex;
       flex-direction: column;
@@ -128,6 +205,11 @@
       align-self: end;
       position: relative;
       margin-top: -6rem;
+
+      @media (max-width: 1000px) {
+        align-self: center;
+        margin-top: -12rem;
+      }
     }
   }
 
@@ -179,6 +261,11 @@
       display: flow-root;
       margin-inline: auto;
 
+      @media (max-width: 1350px) {
+        max-width: 100%;
+        font-size: calc(38px + (68 - 38) * ((100vw - 320px) / (1350 - 320)));
+      }
+
       &::before {
         content: "<<";
         position: absolute;
@@ -186,7 +273,19 @@
         font-weight: 700;
         left: -22rem;
         top: -13rem;
+
+        @media (max-width: 1350px) {
+          display: none;
+        }
       }
+    }
+  }
+
+  .article {
+    display: none;
+
+    &.active {
+      display: block;
     }
   }
 }

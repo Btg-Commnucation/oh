@@ -25,7 +25,7 @@ get_header();
         <section class="buttons-container">
             <div class="container-page">
                 <?php while ($query->have_posts()) : $query->the_post(); ?>
-                    <button id="<?= get_the_ID(); ?>" class="active"><?php the_title(); ?></button>
+                    <button id="<?= get_the_ID(); ?>" class="buttons"><?php the_title(); ?></button>
                 <?php endwhile; ?>
             </div>
         </section>

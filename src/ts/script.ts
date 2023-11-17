@@ -1,9 +1,16 @@
 import { submitForm, TCustomFormEvent } from "./submitForm.ts";
 import "@splidejs/splide/css";
 import Splide from "@splidejs/splide";
+import handleArticles from "./handleArticles.ts";
 
 const menuToggle = document.getElementById("menuToggler");
 const photographie = document.getElementById("photographie");
+const articles: NodeListOf<HTMLDivElement> =
+  document.querySelectorAll(".article");
+const buttons: NodeListOf<HTMLButtonElement> =
+  document.querySelectorAll(".buttons");
+
+const entries = document.querySelectorAll(".entry");
 
 if (menuToggle) {
   const menuContainer = document.getElementById("menu-container");
@@ -42,5 +49,45 @@ if (photographie) {
     wheel: true,
     wheelSleep: 1000,
     releaseWheel: true,
+    speed: 1500,
   }).mount();
+}
+
+if (articles && buttons.length > 0) {
+  console.log(buttons);
+  buttons[0].classList.add("active");
+  articles[0].classList.add("active");
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      handleArticles(articles, buttons, button);
+    });
+  });
+}
+
+if (entries.length > 0) {
+  const ratio = 0.5;
+  const options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: ratio,
+  };
+
+  const handleIntersect = function (
+    entries: IntersectionObserverEntry[],
+    observer: IntersectionObserver
+  ) {
+    entries.forEach((entry: IntersectionObserverEntry) => {
+      if (entry.intersectionRatio > ratio) {
+        entry.target.classList.add("reveal-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(handleIntersect, options);
+  setTimeout(() => {
+    observer.observe(document.querySelector(".content-hero-banner")!);
+  }, 500);
+  entries.forEach((entry) => observer.observe(entry));
 }

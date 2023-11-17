@@ -1,7 +1,7 @@
 <?php
 
 // Exit if accessed directly
-if ( ! defined( 'ABSPATH' ) )
+if (!defined('ABSPATH'))
 	exit;
 
 /*
@@ -26,23 +26,23 @@ define('VITE_SERVER', 'http://localhost:3000');
 define('VITE_ENTRY_POINT', '/main.js');
 
 // enqueue hook
-add_action( 'wp_enqueue_scripts', function() {
+add_action('wp_enqueue_scripts', function () {
 
 	if (defined('IS_VITE_DEVELOPMENT') && IS_VITE_DEVELOPMENT === true) {
 
 		// insert hmr into head for live reload
-		function vite_head_module_hook() {
+		function vite_head_module_hook()
+		{
 			echo '<script type="module" crossorigin src="' . VITE_SERVER . VITE_ENTRY_POINT . '"></script>';
 		}
 		add_action('wp_head', 'vite_head_module_hook');
-
 	} else {
 
 		// production version, 'npm run build' must be executed in order to generate assets
 		// ----------
 
 		// read manifest.json to figure out what to enqueue
-		$manifest = json_decode( file_get_contents( DIST_PATH . '/manifest.json'), true );
+		$manifest = json_decode(file_get_contents(DIST_PATH . '/manifest.json'), true);
 
 		// is ok
 		if (is_array($manifest)) {
@@ -52,21 +52,20 @@ add_action( 'wp_enqueue_scripts', function() {
 			if (isset($manifest_key[0])) {
 
 				// enqueue CSS files
-				foreach(@$manifest[$manifest_key[0]]['css'] as $css_file) {
-					wp_enqueue_style( 'main', DIST_URI . '/' . $css_file );
+				foreach (@$manifest[$manifest_key[0]] as $css_file) {
+					wp_enqueue_style('main', DIST_URI . '/' . $css_file);
 				}
+
+				//ibr041!N3
+
+				//admin_devdb
 
 				// enqueue main JS file
-				$js_file = @$manifest[$manifest_key[0]]['file'];
-				if ( ! empty($js_file)) {
-					wp_enqueue_script( 'main', DIST_URI . '/' . $js_file, JS_DEPENDENCY, '', JS_LOAD_IN_FOOTER );
+				$js_file = @$manifest[$manifest_key[1]]['file'];
+				if (!empty($js_file)) {
+					wp_enqueue_script('main', DIST_URI . '/' . $js_file, JS_DEPENDENCY, '', JS_LOAD_IN_FOOTER);
 				}
-
 			}
-
 		}
-
 	}
-
-
 });
